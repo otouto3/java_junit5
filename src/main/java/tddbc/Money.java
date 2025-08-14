@@ -1,6 +1,6 @@
 package tddbc;
 
-abstract class Money {
+class Money {
     protected int amount;
     protected String currency;
     Money(int amount, String currency) {
@@ -8,7 +8,9 @@ abstract class Money {
         this.currency = currency;
     }
 
-    abstract Money times(int multiplier);
+    Money times(int multiplier) {
+        return null;
+    }
 
     String currency() {
         return currency;
@@ -18,6 +20,10 @@ abstract class Money {
         Money money = (Money) object;
         return amount == money.amount 
                && getClass().equals(money.getClass());
+    }
+
+    public String toString() {
+        return amount + " " + currency;
     }
 
     static Money dollar(int amount) {
